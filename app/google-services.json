@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "784567129704",
+    "project_id": "shoppingcorner-c7065",
+    "storage_bucket": "shoppingcorner-c7065.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784567129704:android:e1b1ec1216f69844b24ddd",
+        "android_client_info": {
+          "package_name": "com.example.shoppingcorner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784567129704-bp38i99fb8v41mf75o954n6budpt5q8n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shoppingcorner",
+            "certificate_hash": "f0beb53625c0b57c7018be995da4f5aa037ccfd9"
+          }
+        },
+        {
+          "client_id": "784567129704-nhihtk985hb9nv9hi0vvrkk7f4v57r1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9k2bnUvgvn_1qvKclkYN6ysEAu1lSGD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784567129704-nhihtk985hb9nv9hi0vvrkk7f4v57r1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

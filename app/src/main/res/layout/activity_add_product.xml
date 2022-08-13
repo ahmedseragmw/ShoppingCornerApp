@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        tools:context=".AddProductActivity">
+
+        <EditText
+            android:id="@+id/et_product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/et_product_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/et_product_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:backgroundTint="#857E7E"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/et_productPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_title" />
+
+        <EditText
+            android:id="@+id/et_productPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Price"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/et_mobile_number_add_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_description" />
+
+        <Button
+            android:id="@+id/btn_save_product_add_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:backgroundTint="#D85329"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_seller_add_product" />
+
+        <EditText
+            android:id="@+id/et_mobile_number_add_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/et_address_add_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_productPrice" />
+
+        <EditText
+            android:id="@+id/et_address_add_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/et_seller_add_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_mobile_number_add_product" />
+
+        <EditText
+            android:id="@+id/et_seller_add_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Your Name"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save_product_add_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_address_add_product" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

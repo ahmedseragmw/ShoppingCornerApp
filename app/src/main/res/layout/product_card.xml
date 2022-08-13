@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8sp"
+    android:background="#FFFFFF"
+
+
+    android:backgroundTint="#FF2828"
+    app:cardCornerRadius="4sp">
+
+
+    <LinearLayout
+        android:id="@+id/myCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E3E1E1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_title_prodcut_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8sp"
+            android:text="title"
+            android:textColor="#D85329"
+            android:textSize="35sp"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_price_prodcut_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:text="price"
+            android:textColor="#D85329"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_address_product_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8sp"
+            android:text="price"
+            android:textColor="#D85329"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
