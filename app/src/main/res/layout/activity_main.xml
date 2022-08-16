@@ -22,29 +22,42 @@
 
         <Button
             android:id="@+id/btn_my_products_main"
-            android:layout_width="175sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#D85329"
             android:text="My Products"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintEnd_toStartOf="@+id/btn_my_orders_main"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/homeRV"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/btn_my_profile_main"
-            android:layout_width="175sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#D85329"
             android:text="Log Out"
             app:layout_constraintBottom_toBottomOf="@+id/btn_my_products_main"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.644"
-            app:layout_constraintStart_toEndOf="@+id/btn_my_products_main"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_my_orders_main"
             app:layout_constraintTop_toTopOf="@+id/btn_my_products_main"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_my_orders_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D85329"
+            android:text="My Orders"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_my_products_main"
+            app:layout_constraintEnd_toStartOf="@+id/btn_my_profile_main"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_my_products_main"
+            app:layout_constraintTop_toTopOf="@+id/btn_my_products_main" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

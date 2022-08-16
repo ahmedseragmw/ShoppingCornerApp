@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.shoppingcorner.databinding.ActivityAddProductBinding
 import com.example.shoppingcorner.models.Product
+import com.example.shoppingcorner.models.User
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -52,15 +53,15 @@ class AddProductActivity : AppCompatActivity() {
     private fun saveProduct() {
         val title = binding.etProductTitle.text.toString()
         val description = binding.etProductDescription.text.toString()
-        var price: Int = 0
+        var price: Long = 0
         if (binding.etProductPrice.text.toString().isNotEmpty())
-            price = Integer.parseInt(binding.etProductPrice.text.toString())
+            price = (binding.etProductPrice.text.toString().toLong())
         else
             price = 1
         val address = binding.etAddressAddProduct.text.toString()
-        var mobileNumber: Int = 0
+        var mobileNumber: Long = 0
         if (binding.etProductPrice.text.toString().isNotEmpty())
-            mobileNumber = Integer.parseInt(binding.etMobileNumberAddProduct.text.toString())
+            mobileNumber = (binding.etMobileNumberAddProduct.text.toString().toLong())
         else
             mobileNumber = 1
         val user = FirebaseAuth.getInstance().currentUser
@@ -68,26 +69,41 @@ class AddProductActivity : AppCompatActivity() {
 
         if (title.isNotEmpty() && description.isNotEmpty() && binding.etProductPrice.text.isNotEmpty() && description.isNotEmpty() &&
             binding.etAddressAddProduct.text.isNotEmpty() && binding.etMobileNumberAddProduct.text.isNotEmpty() &&
-            binding.etSellerAddProduct.text.isNotEmpty()
+            binding.etQuntityAddProduct.text.isNotEmpty()
         ) {
+            val newEntry = FirebaseFirestore.getInstance().collection("products2").document()
+            val productId = newEntry.id
 
-            var product = Product(
-                binding.etSellerAddProduct.text.toString(),
-                address, mobileNumber, user!!.uid, title, description, price
-            )
-            val db = FirebaseFirestore.getInstance().collection("products")
-                .add(
-                    product
 
-                ).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(this, "product added", Toast.LENGTH_LONG).show()
-                        finish()
-                    } else {
-                        Toast.makeText(this, "error", Toast.LENGTH_LONG).show()
 
+
+            FirebaseFirestore.getInstance().collection("users")
+                .document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener {
+
+                    newEntry.set(
+
+                        Product(
+                            user!!.uid,
+                            binding.etQuntityAddProduct.text.toString().toLong(),
+                            address, mobileNumber, productId, title, description, price,
+                            it
+                                .toObject(User::class.java)!!
+                                .firstName + " " +
+                                    it.toObject(User::class.java)!!
+                                        .lastName
+                        )
+
+                    ).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this, "product added", Toast.LENGTH_LONG).show()
+                            finish()
+                        } else {
+                            Toast.makeText(this, "error", Toast.LENGTH_LONG).show()
+
+                        }
                     }
                 }
+
         } else {
             Toast.makeText(this, "Please fill all entries", Toast.LENGTH_LONG).show()
         }

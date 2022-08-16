@@ -6,20 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingcorner.models.Product
 
 class HomeRvAdapter(listener:OnProductClicked): RecyclerView.Adapter<HomeRvAdapter.ViewHolder>() {
-
     var listener = listener
     var data = listOf<Product>()
 
     inner class ViewHolder (itemView: View):RecyclerView.ViewHolder(itemView),View.OnClickListener{
-        val title :TextView = itemView.findViewById(R.id.tv_title_prodcut_card)
-        val price :TextView = itemView.findViewById(R.id.tv_price_prodcut_card)
-        val address:TextView = itemView.findViewById(R.id.tv_address_product_card)
+        val title :TextView = itemView.findViewById(R.id.tv_title_order_card)
+        val price :TextView = itemView.findViewById(R.id.tv_quantity_order_card)
+        val address:TextView = itemView.findViewById(R.id.tv_delivred_order_card)
         val card:LinearLayout=itemView.findViewById(R.id.myCardView)
         init {
             itemView.setOnClickListener(this)
