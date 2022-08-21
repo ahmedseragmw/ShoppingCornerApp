@@ -24,6 +24,7 @@ class OrderViewActivity : AppCompatActivity() {
     lateinit var quantity:String
     lateinit var orderId:String
     lateinit var productID:String
+    lateinit var delivered:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,7 @@ class OrderViewActivity : AppCompatActivity() {
         quantity = intent.getStringExtra("orderQuantity").toString()
         orderId = intent.getStringExtra("orderId").toString()
         productID = intent.getStringExtra("productId").toString()
-        val delivered=intent.getStringExtra("delivered")
+       delivered =intent.getStringExtra("delivered").toString()
         findViewById<TextView>(R.id.tv_title_product_view).setText(title)
         findViewById<TextView>(R.id.tv_desc_product_view).setText(desc)
         findViewById<TextView>(R.id.tv_price_product_view).setText("Price: " + price + "$")
@@ -75,6 +76,7 @@ class OrderViewActivity : AppCompatActivity() {
                 FirebaseFirestore.getInstance().collection("orders").document("${intent.getStringExtra("orderId")}")
                     .update("delivered",true)
                 findViewById<Button>(R.id.btn_delivered_order_view).isEnabled=false
+                delivered="true"
             }
         }
 
@@ -94,7 +96,7 @@ class OrderViewActivity : AppCompatActivity() {
                             if (dc.type == DocumentChange.Type.ADDED) {
 
 
-                                if(dc.document.toObject(Product::class.java).id.equals(productID)&&intent.getStringExtra("orderDelivered").toString().equals("false")){
+                                if(dc.document.toObject(Product::class.java).id.equals(productID)&&delivered.equals("false")){
                                     FirebaseFirestore.getInstance().collection("products2")
                                         .document(dc.document.toObject(Product::class.java).id)
                                         .update("quantity",quantity.toLong()+(intent.getStringExtra("productQuantity"))!!.toLong())
